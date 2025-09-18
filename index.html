@@ -68,7 +68,11 @@
     font-size: 1.5rem;
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
-}
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Deze regel zorgt voor de animatie */
+    }
+    .hamburger--hidden {
+    transform: translateY(-150%); /* Verplaats het menu naar boven, uit het zicht */
+    }
     .hamburger:hover {
         background: var(--primary-color);
         transform: rotate(90deg);
@@ -1120,6 +1124,23 @@
       const pricingSlider = document.getElementById('pricingSlider');
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
+      const mainContent = document.querySelector('.main-content');
+    let lastScrollY = mainContent.scrollTop; // Houdt de laatste scrollpositie bij
+
+    mainContent.addEventListener('scroll', () => {
+        // Alleen uitvoeren als het hamburgermenu zichtbaar is (op mobiel)
+        if (window.innerWidth <= 992) {
+            if (mainContent.scrollTop > lastScrollY) {
+                // We scrollen naar beneden: verberg het menu
+                hamburger.classList.add('hamburger--hidden');
+            } else {
+                // We scrollen naar boven: toon het menu
+                hamburger.classList.remove('hamburger--hidden');
+            }
+            // Update de laatste scrollpositie
+            lastScrollY = mainContent.scrollTop;
+        }
+    });
 
       // Functie om de actieve tab te wisselen
       function switchTab(tab) {
@@ -1224,5 +1245,3 @@
 </script>
 </body>
 </html>
-
-

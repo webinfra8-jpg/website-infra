@@ -1125,22 +1125,21 @@
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
       const mainContent = document.querySelector('.main-content');
-    let lastScrollY = mainContent.scrollTop; // Houdt de laatste scrollpositie bij
+    let lastScrollY = window.scrollY; // ipv mainContent.scrollTop
 
-    mainContent.addEventListener('scroll', () => {
-        // Alleen uitvoeren als het hamburgermenu zichtbaar is (op mobiel)
-        if (window.innerWidth <= 992) {
-            if (mainContent.scrollTop > lastScrollY) {
-                // We scrollen naar beneden: verberg het menu
-                hamburger.classList.add('hamburger--hidden');
-            } else {
-                // We scrollen naar boven: toon het menu
-                hamburger.classList.remove('hamburger--hidden');
-            }
-            // Update de laatste scrollpositie
-            lastScrollY = mainContent.scrollTop;
+window.addEventListener('scroll', () => {
+    if (window.innerWidth <= 992) {
+        if (window.scrollY > lastScrollY) {
+            // Scrolt naar beneden → verberg
+            hamburger.classList.add('hamburger--hidden');
+        } else {
+            // Scrolt naar boven → toon
+            hamburger.classList.remove('hamburger--hidden');
         }
-    });
+        lastScrollY = window.scrollY;
+    }
+});
+
 
       // Functie om de actieve tab te wisselen
       function switchTab(tab) {

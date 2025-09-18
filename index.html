@@ -53,22 +53,22 @@
     }
 
     /* Hamburger menu - alleen zichtbaar op mobiel */
-    .hamburger {
-        display: none; /* Standaard verborgen */
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 1100;
-        background: var(--dark-blue);
-        color: var(--white);
-        border: none;
-        border-radius: 8px;
-        padding: 10px 12px;
-        cursor: pointer;
-        font-size: 1.5rem;
-        box-shadow: var(--shadow-md);
-        transition: all 0.3s ease;
-    }
+    ..hamburger {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px; /* 'left' is veranderd naar 'right' */
+    z-index: 1100;
+    background: var(--dark-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
     .hamburger:hover {
         background: var(--primary-color);
         transform: rotate(90deg);
@@ -207,13 +207,14 @@
     }
 
     .hero-bg-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transform: scale(1.05);
-        z-index: 1;
-    }
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* Deze regel toevoegen */
+    transform: scale(1.05);
+    z-index: 1;
+}
 
     .hero-bg-overlay {
         position: absolute;

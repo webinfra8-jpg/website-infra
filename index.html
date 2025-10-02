@@ -24,17 +24,14 @@
         --font-heading: 'Poppins', sans-serif;
         --font-body: 'Lato', sans-serif;
     }
-
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-
     html {
         scroll-behavior: smooth;
     }
-
     body {
         background-color: var(--light-gray);
         color: var(--text-color);
@@ -45,39 +42,36 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-
     h1, h2, h3, h4, h5, h6 {
         font-family: var(--font-heading);
         color: var(--dark-blue);
         font-weight: 700;
     }
-
     /* Hamburger menu - alleen zichtbaar op mobiel */
     .hamburger {
-    display: none;
-    position: fixed;
-    top: 20px;
-    right: 20px; /* 'left' is veranderd naar 'right' */
-    z-index: 1100;
-    background: var(--dark-blue);
-    color: var(--white);
-    border: none;
-    border-radius: 8px;
-    padding: 10px 12px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    box-shadow: var(--shadow-md);
-    transition: all 0.3s ease;
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Deze regel zorgt voor de animatie */
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1100;
+        background: var(--dark-blue);
+        color: var(--white);
+        border: none;
+        border-radius: 8px;
+        padding: 10px 12px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        box-shadow: var(--shadow-md);
+        transition: all 0.3s ease;
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     .hamburger--hidden {
-    transform: translateY(-150%); /* Verplaats het menu naar boven, uit het zicht */
+        transform: translateY(-150%);
     }
     .hamburger:hover {
         background: var(--primary-color);
         transform: rotate(90deg);
     }
-
     /* Sidebar - standaard open op desktop */
     .sidebar {
         width: var(--sidebar-width);
@@ -91,26 +85,22 @@
         border-right: 1px solid rgba(255, 255, 255, 0.1);
         display: flex;
         flex-direction: column;
-        transform: translateX(0); /* Standaard open op desktop */
+        transform: translateX(0);
     }
-
     .sidebar.active {
         transform: translateX(0);
         box-shadow: 0 0 50px rgba(0,0,0,0.3);
     }
-
     .sidebar-header {
         padding: 30px 20px;
         text-align: center;
     }
-
     .logo {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-
     .logo-image {
         width: 120px;
         height: 120px;
@@ -122,24 +112,20 @@
         box-shadow: 0 0 20px rgba(0, 169, 157, 0.4);
         border: 3px solid var(--primary-color);
     }
-
     .logo h1 {
         font-size: 1.4rem;
         font-weight: 600;
         color: var(--white);
         line-height: 1.2;
     }
-
     .sidebar-nav {
         list-style: none;
         padding: 20px 0;
         flex-grow: 1;
     }
-
     .nav-item {
         margin: 8px 20px;
     }
-
     .nav-link {
         color: rgba(255, 255, 255, 0.7);
         text-decoration: none;
@@ -151,21 +137,18 @@
         font-weight: 600;
         position: relative;
     }
-
     .nav-link:hover, .nav-link.active {
         background-color: var(--primary-color);
         color: var(--white);
         transform: translateX(5px);
         box-shadow: var(--shadow-md);
     }
-
     .nav-link i {
         margin-right: 15px;
         font-size: 1.2rem;
         width: 25px;
         text-align: center;
     }
-
     .sidebar-footer {
         padding: 20px;
         text-align: center;
@@ -174,30 +157,25 @@
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         margin-top: auto;
     }
-
     /* Main content - marge voor sidebar op desktop */
     .main-content {
         flex: 1;
-        margin-left: var(--sidebar-width); /* Marge voor sidebar op desktop */
+        margin-left: var(--sidebar-width);
         padding: 30px 40px;
         transition: margin-left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         width: calc(100% - var(--sidebar-width));
     }
-
     .tab-content {
         display: none;
         animation: fadeIn 0.6s ease-out forwards;
     }
-
     .tab-content.active {
         display: block;
     }
-
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
     }
-
     .hero {
         position: relative;
         height: 550px;
@@ -209,17 +187,15 @@
         text-align: left;
         margin-bottom: 40px;
     }
-
     .hero-bg-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center; /* Deze regel toevoegen */
-    transform: scale(1.05);
-    z-index: 1;
-}
-
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transform: scale(1.05);
+        z-index: 1;
+    }
     .hero-bg-overlay {
         position: absolute;
         width: 100%;
@@ -227,14 +203,12 @@
         background: linear-gradient(90deg, rgba(13, 27, 42, 0.8) 0%, rgba(13, 27, 42, 0.3) 100%);
         z-index: 2;
     }
-
     .hero-content {
         position: relative;
         max-width: 700px;
         padding: 40px;
         z-index: 3;
     }
-
     .hero h2 {
         font-size: 3.5rem;
         color: var(--white);
@@ -243,14 +217,12 @@
         line-height: 1.2;
         text-shadow: 0 2px 15px rgba(0,0,0,0.5);
     }
-
     .hero p {
         font-size: 1.2rem;
         margin-bottom: 30px;
         max-width: 550px;
         text-shadow: 0 1px 10px rgba(0,0,0,0.5);
     }
-
     .btn {
         display: inline-flex;
         align-items: center;
@@ -268,23 +240,19 @@
         box-shadow: var(--shadow-sm);
         white-space: nowrap;
     }
-
     .btn:hover {
         background: var(--secondary-color);
         border-color: var(--secondary-color);
         transform: translateY(-5px);
         box-shadow: var(--shadow-md);
     }
-
     .btn i {
         margin-left: 10px;
         transition: transform 0.3s ease;
     }
-
     .btn:hover i {
         transform: translateX(5px);
     }
-
     .section-title {
         color: var(--dark-blue);
         margin-bottom: 40px;
@@ -293,7 +261,6 @@
         position: relative;
         padding-bottom: 15px;
     }
-
     .section-title::after {
         content: '';
         position: absolute;
@@ -304,13 +271,11 @@
         background: var(--primary-color);
         border-radius: 3px;
     }
-
     .services-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
+        gap: 20px;
     }
-
     .service-card {
         background: var(--white);
         border-radius: var(--border-radius);
@@ -319,31 +284,25 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         border: 1px solid #e0e0e0;
     }
-
     .service-card:hover {
         transform: translateY(-10px);
         box-shadow: var(--shadow-md);
     }
-
     .service-card-icon {
         font-size: 2.5rem;
         color: var(--primary-color);
         margin-bottom: 15px;
     }
-
     .service-content {
         padding: 30px;
     }
-
     .service-content h3 {
         font-size: 1.4rem;
         margin-bottom: 10px;
     }
-
     .service-content p {
         color: var(--text-color-light);
     }
-
     .about-content {
         display: flex;
         flex-wrap: wrap;
@@ -354,25 +313,21 @@
         border-radius: var(--border-radius);
         box-shadow: var(--shadow-md);
     }
-
     .about-text {
         flex: 1.2;
         min-width: 300px;
     }
-
     .about-image {
         flex: 1;
         min-width: 300px;
         border-radius: var(--border-radius);
         overflow: hidden;
     }
-
     .about-image img {
         width: 100%;
         height: auto;
         display: block;
     }
-
     .project-card {
         position: relative;
         border-radius: var(--border-radius);
@@ -380,18 +335,15 @@
         height: 320px;
         box-shadow: var(--shadow-md);
     }
-
     .project-card img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
     }
-
     .project-card:hover img {
         transform: scale(1.1);
     }
-
     .project-overlay {
         position: absolute;
         bottom: 0;
@@ -406,29 +358,24 @@
         -webkit-backdrop-filter: blur(10px);
         border-top: 1px solid rgba(255,255,255,0.2);
     }
-
     .project-card:hover .project-overlay {
         transform: translateY(0);
     }
-
     .project-overlay h3 {
         color: var(--white);
         margin-bottom: 5px;
     }
-
     /* Prijslijst met pijlen */
     .pricing-slider-wrapper {
         position: relative;
         margin-bottom: 30px;
     }
-
     .pricing-controls {
         display: flex;
         justify-content: center;
         gap: 20px;
         margin-top: 20px;
     }
-
     .slider-arrow {
         background-color: var(--dark-blue);
         color: var(--white);
@@ -444,18 +391,15 @@
         box-shadow: var(--shadow-md);
         transition: all 0.3s ease;
     }
-
     .slider-arrow:hover {
         background-color: var(--primary-color);
         transform: scale(1.1);
     }
-
     .slider-arrow:disabled {
         background-color: #ccc;
         cursor: not-allowed;
         opacity: 0.5;
     }
-
     .pricing-slider {
         display: flex;
         gap: 20px;
@@ -467,11 +411,9 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
-
     .pricing-slider::-webkit-scrollbar {
         display: none;
     }
-
     .pricing-card {
         background: var(--white);
         border-radius: var(--border-radius);
@@ -484,47 +426,39 @@
         flex: 0 0 320px;
         scroll-snap-align: start;
     }
-
     .pricing-card:hover {
         transform: translateY(-10px);
         box-shadow: var(--shadow-md);
     }
-
     .pricing-image {
         height: 200px;
         overflow: hidden;
     }
-
     .pricing-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
     }
-
     .pricing-card:hover .pricing-image img {
         transform: scale(1.1);
     }
-
     .pricing-content {
         padding: 25px;
         display: flex;
         flex-direction: column;
         flex-grow: 1;
     }
-
     .pricing-title {
         font-size: 1.4rem;
         margin-bottom: 15px;
         color: var(--dark-blue);
     }
-
     .pricing-description {
         color: var(--text-color-light);
         margin-top: auto;
         padding-top: 15px;
     }
-
     .pricing-note {
         font-size: 0.9rem;
         color: var(--text-color-light);
@@ -532,11 +466,9 @@
         margin-top: 30px;
         text-align: center;
     }
-
     .pricing-details {
         margin-bottom: 15px;
     }
-
     .price-category {
         font-size: 1.1rem;
         font-weight: 600;
@@ -546,7 +478,6 @@
         border-bottom: 1px solid #eee;
         padding-bottom: 5px;
     }
-
     .price-line {
         display: flex;
         justify-content: space-between;
@@ -554,12 +485,10 @@
         color: var(--text-color);
         padding: 4px 0;
     }
-
     .price-line .price-value {
         font-weight: 700;
         color: var(--primary-color);
     }
-
     /* Contact */
     .contact-container {
         display: flex;
@@ -567,7 +496,6 @@
         gap: 40px;
         margin-top: 30px;
     }
-
     .contact-info, .contact-form {
         flex: 1;
         min-width: 300px;
@@ -576,23 +504,19 @@
         border-radius: var(--border-radius);
         box-shadow: var(--shadow-md);
     }
-
     .contact-info h3 {
         margin-bottom: 25px;
         font-size: 1.8rem;
     }
-
     .contact-details {
         list-style: none;
     }
-
     .contact-details li {
         margin-bottom: 18px;
         display: flex;
         align-items: center;
         font-size: 1rem;
     }
-
     .contact-details i {
         margin-right: 18px;
         color: var(--primary-color);
@@ -600,7 +524,9 @@
         width: 28px;
         text-align: center;
     }
-
+    .form-group {
+      margin-bottom: 20px;
+    }
     .form-group label {
         display: block;
         margin-bottom: 8px;
@@ -608,7 +534,6 @@
         font-family: var(--font-heading);
         color: var(--dark-blue);
     }
-
     .form-group input, .form-group textarea {
         width: 100%;
         padding: 15px;
@@ -620,19 +545,16 @@
         transition: all 0.3s ease;
         border-bottom: 3px solid transparent;
     }
-
     .form-group input:focus, .form-group textarea:focus {
         outline: none;
         background-color: var(--white);
         border-bottom: 3px solid var(--primary-color);
         box-shadow: var(--shadow-sm);
     }
-
     .form-group textarea {
         min-height: 150px;
         resize: vertical;
     }
-
     .contact-map-link {
         display: block;
         border-radius: var(--border-radius);
@@ -641,17 +563,14 @@
         position: relative;
         box-shadow: var(--shadow-sm);
     }
-
     .contact-map-image {
         width: 100%;
         display: block;
         transition: transform 0.4s ease;
     }
-
     .contact-map-link:hover .contact-map-image {
         transform: scale(1.05);
     }
-
     .map-overlay {
         position: absolute;
         top: 0;
@@ -670,16 +589,13 @@
         font-size: 1.2rem;
         cursor: pointer;
     }
-
     .map-overlay i {
         font-size: 2.5rem;
         margin-bottom: 10px;
     }
-
     .contact-map-link:hover .map-overlay {
         opacity: 1;
     }
-
     .contact-details .fab {
         margin-right: 18px;
         color: var(--primary-color);
@@ -687,32 +603,70 @@
         width: 28px;
         text-align: center;
     }
-
     .contact-social-link a {
         color: var(--text-color);
         text-decoration: none;
         transition: color 0.3s ease;
     }
-
     .contact-social-link a:hover {
         color: var(--primary-color);
     }
 
+     /* Styling voor Media Sectie */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.media-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: all 0.3s;
+  border-left: 5px solid transparent;
+}
+
+.media-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(46,125,50,0.15);
+  border-left-color: #2e7d32;
+}
+
+.video-container {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.video-container iframe,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+    /* --- EINDE AANPASSING --- */
+
     /* Responsive */
     @media (max-width: 992px) {
         .hamburger {
-            display: block; /* Toon hamburger op mobiel */
+            display: block;
         }
-
         .sidebar {
-            transform: translateX(-100%); /* Gesloten op mobiel */
+            transform: translateX(-100%);
         }
         .sidebar.active {
             transform: translateX(0);
             box-shadow: 0 0 50px rgba(0,0,0,0.3);
         }
         .main-content {
-            margin-left: 0; /* Geen marge op mobiel */
+            margin-left: 0;
             width: 100%;
         }
         .hero {
@@ -729,7 +683,6 @@
             display: none;
         }
     }
-
     @media (max-width: 768px) {
         .about-content, .contact-container {
             flex-direction: column;
@@ -750,6 +703,7 @@
   </style>
 </head>
 <body>
+
 <button class="hamburger">
   <i class="fas fa-bars"></i>
 </button>
@@ -761,7 +715,6 @@
       <h1>Chander Infra N.V.</h1>
     </div>
   </div>
-
   <ul class="sidebar-nav">
     <li class="nav-item">
       <a href="#home" class="nav-link active" data-tab="home">
@@ -794,13 +747,18 @@
       </a>
     </li>
     <li class="nav-item">
+      <a href="#media" class="nav-link" data-tab="media">
+        <i class="fas fa-video"></i>
+        <span>Media</span>
+      </a>
+    </li>
+    <li class="nav-item">
       <a href="#contact" class="nav-link" data-tab="contact">
         <i class="fas fa-envelope"></i>
         <span>Contact</span>
       </a>
     </li>
   </ul>
-
   <div class="sidebar-footer">
     <p>© 2024 Chander Infra N.V.</p>
     <p>Alle rechten voorbehouden</p>
@@ -821,7 +779,6 @@
         </a>
       </div>
     </div>
-
     <div>
       <h2 class="section-title">Waarom Chander Infra N.V.?</h2>
       <div class="services-grid">
@@ -852,7 +809,6 @@
 
   <div id="about" class="tab-content">
     <h2 class="section-title">Over Ons</h2>
-
     <div class="about-content" style="margin-bottom: 40px;">
       <div class="about-text">
         <h3>Wie Zijn Wij</h3>
@@ -862,7 +818,6 @@
         <img src="img/Kantoor%20dam.jpeg" alt="Kantoor Chander Infra">
       </div>
     </div>
-
     <div class="services-grid" style="gap: 30px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-bottom: 50px;">
       <div class="service-card">
         <div class="service-content">
@@ -879,7 +834,6 @@
         </div>
       </div>
     </div>
-
     <div style="margin-bottom: 50px;">
       <h3 style="text-align: center; font-size: 2rem; margin-bottom: 25px; color: var(--dark-blue);">Onze Reis Sinds 2024</h3>
       <div class="services-grid" style="gap: 20px;">
@@ -903,7 +857,6 @@
         </div>
       </div>
     </div>
-
     <div>
       <h2 class="section-title">Waarom Chander Infra N.V. uw ideale partner is</h2>
       <div class="services-grid">
@@ -990,7 +943,6 @@
   <div id="pricing" class="tab-content">
     <h2 class="section-title">Onze Prijslijst</h2>
     <p style="margin-bottom: 25px;">Navigeer door ons aanbod. Prijzen zijn per kubieke meter (m³). Neem contact met ons op voor een gedetailleerde offerte op maat.</p>
-
     <div class="pricing-slider-wrapper">
       <div class="pricing-slider" id="pricingSlider">
         <div class="pricing-card">
@@ -1003,7 +955,6 @@
               <h4 class="price-category">Stockpile Prijs</h4>
               <div class="price-line"><span>Rekening:</span><span class="price-value">SRD 150 / m³</span></div>
               <div class="price-line"><span>Contant:</span><span class="price-value">SRD 125 / m³</span></div>
-
               <h4 class="price-category">Zandput Prijs</h4>
               <div class="price-line"><span>Rekening:</span><span class="price-value">SRD 125 / m³</span></div>
               <div class="price-line"><span>Contant:</span><span class="price-value">SRD 100 / m³</span></div>
@@ -1011,7 +962,6 @@
             <p class="pricing-description">Grijs opvulzand, goed verdichtbaar en ideaal voor funderingen en ophoging.</p>
           </div>
         </div>
-
         <div class="pricing-card">
           <div class="pricing-image">
             <img src="img/Geel.jpeg" alt="Brekerzand">
@@ -1022,7 +972,6 @@
               <h4 class="price-category">Stockpile Prijs</h4>
               <div class="price-line"><span>Rekening:</span><span class="price-value">SRD 150 / m³</span></div>
               <div class="price-line"><span>Contant:</span><span class="price-value">SRD 125 / m³</span></div>
-
               <h4 class="price-category">Zandput Prijs</h4>
               <div class="price-line"><span>Rekening:</span><span class="price-value">SRD 125 / m³</span></div>
               <div class="price-line"><span>Contant:</span><span class="price-value">SRD 100 / m³</span></div>
@@ -1030,7 +979,6 @@
             <p class="pricing-description">Geel opvulzand, los en grof, ideaal voor ophoging, tuinprojecten minder ideaal voor funderingen.</p>
           </div>
         </div>
-
         <div class="pricing-card">
           <div class="pricing-image">
             <img src="img/Zandklei.jpeg" alt="Zandklei">
@@ -1041,7 +989,6 @@
               <h4 class="price-category">Stockpile Prijs</h4>
               <div class="price-line"><span>Niet Beschikbaar</span><span class="price-value"></span></div>
               <div class="price-line"><span></span><span class="price-value"></span></div>
-
               <h4 class="price-category">Zandput Prijs</h4>
               <div class="price-line"><span></span><span class="price-value"></span></div>
               <div class="price-line"><span>Contant:</span><span class="price-value">SRD 75 / m³</span></div>
@@ -1049,7 +996,6 @@
             <p class="pricing-description">Zandklei, mengsel van zand en klei, geschikt voor tuinen en landschapsprojecten.</p>
           </div>
         </div>
-
         <div class="pricing-card">
           <div class="pricing-image">
             <img src="img/Toplaag.jpeg" alt="Toplaag">
@@ -1060,7 +1006,6 @@
               <h4 class="price-category">Stockpile Prijs</h4>
               <div class="price-line"><span>Niet Beschikbaar</span><span class="price-value"></span></div>
               <div class="price-line"><span></span><span class="price-value"></span></div>
-
               <h4 class="price-category">Zandput Prijs</h4>
               <div class="price-line"><span>Contant:</span><span class="price-value">SRD 100 / m³</span></div>
               <div class="price-line"><span></span><span class="price-value"></span></div>
@@ -1068,7 +1013,6 @@
             <p class="pricing-description">Toplaag, zeer vruchtbare bovenlaag, ideaal voor gazons, tuinen enzovoorts.</p>
           </div>
         </div>
-
         <div class="pricing-card">
           <div class="pricing-image">
             <img src="img/Klei.webp" alt="Puur Klei">
@@ -1079,7 +1023,6 @@
               <h4 class="price-category">Stockpile Prijs</h4>
               <div class="price-line"><span>Niet Beschikbaar</span><span class="price-value"></span></div>
               <div class="price-line"><span></span><span class="price-value"></span></div>
-
               <h4 class="price-category">Zandput Prijs</h4>
               <div class="price-line"><span>Contant:</span><span class="price-value">SRD 250 / m³</span></div>
             </div>
@@ -1087,7 +1030,6 @@
           </div>
         </div>
       </div>
-
       <div class="pricing-controls">
         <button class="slider-arrow" id="prevBtn">
           <i class="fas fa-chevron-left"></i>
@@ -1097,14 +1039,12 @@
         </button>
       </div>
     </div>
-
     <p class="pricing-note">* Prijzen zijn onder voorbehoud en kunnen variëren afhankelijk van hoeveelheid en locatie. Transportkosten niet inbegrepen.</p>
   </div>
 
   <div id="projects" class="tab-content">
     <h2 class="section-title">Onze Projecten</h2>
     <div class="projects-grid services-grid">
-
       <div class="project-card">
         <img src="img/ontbossen.jpeg" alt="Verkavelingsprojecten">
         <div class="project-overlay">
@@ -1112,7 +1052,6 @@
           <p>Diverse civieltechnische werkzaamheden voor particulieren en bedrijven, zoals ontbossing, graafwerkzaamheden, egaliseren en grondverbetering.</p>
         </div>
       </div>
-
       <div class="project-card">
         <img src="img/tractor.jpg" alt="Terreinonderhoud">
         <div class="project-overlay">
@@ -1120,7 +1059,6 @@
           <p>Uitvoering van maaiwerkzaamheden voor bermen en taluds bij verschillende grootschalige verkavelingsprojecten.</p>
         </div>
       </div>
-
       <div class="project-card">
         <img src="img/werkzaamheden.jpeg" alt="Civieltechnische werkzaamheden in onderaanneming">
         <div class="project-overlay">
@@ -1128,7 +1066,31 @@
           <p>Als onderaannemer civieltechnische werkzaamheden uitgevoerd voor Bouw en Civieltechnische Werken D&D N.V. en Damosel Resources N.V.</p>
         </div>
       </div>
+    </div>
+  </div>
 
+  <div id="media" class="tab-content">
+    <h2 class="section-title">Onze Media</h2>
+    <p style="margin-bottom: 40px; font-size: 1.1rem; text-align: left;">Bekijk hieronder een selectie van video's van onze werkzaamheden.</p>
+    <div class="media-grid">
+      <div class="video-container">
+        <video controls>
+          <source src="vid/infravid1.mp4" type="video/mp4">
+          Uw browser ondersteunt deze video niet.
+        </video>
+      </div>
+      <div class="video-container">
+        <video controls>
+          <source src="vid/infravid2.mp4" type="video/mp4">
+          Uw browser ondersteunt deze video niet.
+        </video>
+      </div>
+      <div class="video-container">
+        <video controls>
+          <source src="vid/infravid3.mp4" type="video/mp4">
+          Uw browser ondersteunt deze video niet.
+        </video>
+      </div>
     </div>
   </div>
 
@@ -1143,7 +1105,6 @@
             <span>Open in Google Maps</span>
           </div>
         </a>
-
         <p style="margin-bottom: 25px;">
           <strong>Vul het formulier in of neem direct contact op via onderstaande gegevens.</strong>
         </p>
@@ -1152,7 +1113,6 @@
           <li><i class="fas fa-phone"></i> +597 894-9226 / 853-0896</li>
           <li><i class="fas fa-envelope"></i> <a href="mailto:chanderinfranv@gmail.com">chanderinfranv@gmail.com</a></li>
           <li><i class="fas fa-clock"></i> Ma-Za: 07:00 - 17:00</li>
-
           <li class="contact-social-link">
             <i class="fab fa-whatsapp"></i>
             <a href="https://wa.me/+5978530896" target="_blank">WhatsApp</a>
@@ -1200,29 +1160,26 @@
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
       const mainContent = document.querySelector('.main-content');
-    let lastScrollY = window.scrollY; // ipv mainContent.scrollTop
+      let lastScrollY = window.scrollY;
 
-window.addEventListener('scroll', () => {
-    if (window.innerWidth <= 992) {
-        if (window.scrollY > lastScrollY) {
-            // Scrolt naar beneden → verberg
-            hamburger.classList.add('hamburger--hidden');
-        } else {
-            // Scrolt naar boven → toon
-            hamburger.classList.remove('hamburger--hidden');
+      window.addEventListener('scroll', () => {
+        if (window.innerWidth <= 992) {
+            if (window.scrollY > lastScrollY) {
+                // Scrolt naar beneden → verberg
+                hamburger.classList.add('hamburger--hidden');
+            } else {
+                // Scrolt naar boven → toon
+                hamburger.classList.remove('hamburger--hidden');
+            }
+            lastScrollY = window.scrollY;
         }
-        lastScrollY = window.scrollY;
-    }
-});
-
+      });
 
       // Functie om de actieve tab te wisselen
       function switchTab(tab) {
           tabs.forEach(t => t.classList.remove('active'));
           tab.classList.add('active');
-
           tabContents.forEach(content => content.classList.remove('active'));
-
           const tabId = tab.getAttribute('data-tab');
           const activeContent = document.getElementById(tabId);
           if (activeContent) {
@@ -1234,9 +1191,11 @@ window.addEventListener('scroll', () => {
           tab.addEventListener('click', function(e) {
               e.preventDefault();
               switchTab(this);
-              // Sluit sidebar alleen op mobiel
+              // Scrol naar boven in het hoofdcontent-gebied bij tabwissel
+              mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+              // Sluit sidebar alleen op mobiel na klikken
               if (window.innerWidth <= 992) {
-                  sidebar.classList.remove('active');
+                 sidebar.classList.remove('active');
               }
           });
       });
@@ -1260,6 +1219,14 @@ window.addEventListener('scroll', () => {
       if (pricingSlider && prevBtn && nextBtn) {
           const cardWidth = 340; // 320px card + 20px gap
 
+          function updateButtonStates() {
+              const isAtStart = pricingSlider.scrollLeft < 10;
+              const isAtEnd = (pricingSlider.scrollWidth - pricingSlider.clientWidth - pricingSlider.scrollLeft) < 10;
+
+              prevBtn.disabled = isAtStart;
+              nextBtn.disabled = isAtEnd;
+          }
+
           prevBtn.addEventListener('click', function() {
               pricingSlider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
           });
@@ -1268,20 +1235,12 @@ window.addEventListener('scroll', () => {
               pricingSlider.scrollBy({ left: cardWidth, behavior: 'smooth' });
           });
 
-          // Update button states based on scroll position
-          function updateButtonStates() {
-              const isAtStart = pricingSlider.scrollLeft <= 0;
-              const isAtEnd = pricingSlider.scrollLeft >= (pricingSlider.scrollWidth - pricingSlider.clientWidth);
-
-              prevBtn.disabled = isAtStart;
-              nextBtn.disabled = isAtEnd;
-          }
-
           pricingSlider.addEventListener('scroll', updateButtonStates);
+          window.addEventListener('resize', updateButtonStates); // Update ook bij resize
           updateButtonStates(); // Initial state
       }
 
-      // Smooth scrolling voor interne links
+      // Smooth scrolling voor interne links (zoals de offerte knop)
       document.addEventListener('click', function(e) {
           if (e.target.matches('a[href^="#"]') && !e.target.matches('.nav-link')) {
               e.preventDefault();
@@ -1289,35 +1248,44 @@ window.addEventListener('scroll', () => {
               const targetTabLink = document.querySelector(`.nav-link[data-tab="${targetId}"]`);
               if (targetTabLink) {
                   switchTab(targetTabLink);
-                  document.querySelector('.main-content').scrollTop = 0;
+                  mainContent.scrollTo({ top: 0, behavior: 'smooth' });
               }
           }
       });
-  });
 
-  document.getElementById("contactForm").addEventListener("submit", async function(event) {
-    event.preventDefault();
-    const form = event.target;
+      // Contact Form Submission
+      const contactForm = document.getElementById("contactForm");
+      if (contactForm) {
+        contactForm.addEventListener("submit", async function(event) {
+          event.preventDefault();
+          const form = event.target;
+          const submitButton = form.querySelector('button[type="submit"]');
 
-    try {
-      let response = await fetch(form.action, {
-        method: form.method,
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
+          submitButton.textContent = 'Versturen...';
+          submitButton.disabled = true;
 
-      if (response.ok) {
-        alert("Bedankt voor uw bericht! Wij nemen zo spoedig mogelijk contact met u op.");
-        form.reset();
-      } else {
-        alert("Er ging iets mis bij het versturen. Probeer later opnieuw.");
+          try {
+            let response = await fetch(form.action, {
+              method: form.method,
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+              alert("Bedankt voor uw bericht! Wij nemen zo spoedig mogelijk contact met u op.");
+              form.reset();
+            } else {
+              alert("Er ging iets mis bij het versturen. Controleer de ingevulde gegevens en probeer het opnieuw.");
+            }
+          } catch (error) {
+            alert("Fout bij versturen: " + error.message);
+          } finally {
+            submitButton.innerHTML = 'Bericht Versturen <i class="fas fa-paper-plane"></i>';
+            submitButton.disabled = false;
+          }
+        });
       }
-    } catch (error) {
-      alert("Fout bij versturen: " + error.message);
-    }
   });
 </script>
 </body>
 </html>
-
-
